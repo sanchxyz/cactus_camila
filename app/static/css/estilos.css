@@ -1,0 +1,314 @@
+/* Estilos generales */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #121212 url('/static/images/blur_1.svg') no-repeat center center fixed;
+    background-size: cover;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+}
+
+/* Contenedor principal para el efecto de desenfoque */
+.main-container {
+    position: relative;
+    min-height: 100vh;
+    backdrop-filter: blur(10px);
+    /* Efecto de desenfoque */
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.1rem 0.2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    /* Asegura que el header esté por encima */
+}
+
+/* Logo */
+.logo {
+    margin-left: 4%;
+}
+
+.logo img {
+    width: 150px;
+    max-width: 100%;
+}
+
+/* Menú de navegación */
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    gap: 4rem;
+}
+
+nav ul li {
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+}
+
+nav ul li a:hover {
+    color: #4CAF50;
+}
+
+/* Iconos (Home y Login) */
+nav ul li.icon a img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s ease-in-out;
+}
+
+nav ul li.icon a img:hover {
+    transform: scale(1.1);
+}
+
+/* Ajustar la posición del botón "Home" */
+nav ul li:last-child {
+    margin-right: 140px;
+}
+
+/* Sección de información */
+.info {
+    position: relative;
+    margin-top: 350px;
+    /* Ajusta este valor según la altura del header */
+    left: 5%;
+    width: 90%;
+    max-width: 1000px;
+    text-align: left;
+    padding: 1rem;
+    font-style: italic;
+}
+
+.info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.info p {
+    font-size: 1.7rem;
+    line-height: 1.5;
+}
+
+/* Footer */
+footer {
+    background: transparent;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+    /* Asegura que el footer esté por encima */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        padding-top: 1rem;
+    }
+
+    nav ul li {
+        margin-right: 0;
+    }
+
+    .info {
+        margin-top: 150px;
+        /* Ajusta este valor para dispositivos móviles */
+        left: 10px;
+        width: calc(100% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        width: 100px;
+    }
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    nav ul li {
+        flex: 1;
+        text-align: center;
+    }
+
+    nav ul li.icon {
+        flex: none;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+    }
+}
+
+/* Mostrar solo texto en pantallas grandes */
+nav ul li a .icon-img {
+    display: none;
+}
+
+/* En pantallas pequeñas, mostrar iconos y ocultar texto */
+@media (max-width: 768px) {
+    nav ul li a .text {
+        display: none;
+    }
+
+    nav ul li a .icon-img {
+        display: inline-block;
+        width: 24px;
+        height: auto;
+        vertical-align: middle;
+    }
+}
+
+/* Estilos específicos para la página de login */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('/static/images/blur_1.svg') no-repeat center center fixed;
+    background-size: cover;
+    padding: 20px;
+    padding-top: 80px;
+}
+
+.login-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(133, 131, 131, 0.18);
+    text-align: center;
+}
+
+.login-card h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 1rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 1rem;
+    outline: none;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 10px;
+    background: #4CAF50;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+.login-card p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #ffffff;
+}
+
+.login-card a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-card a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividad */
+@media (max-width: 480px) {
+    .login-card {
+        padding: 1.5rem;
+    }
+
+    .login-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .input-group input {
+        padding: 0.5rem;
+    }
+
+    button {
+        padding: 0.5rem;
+    }
+}

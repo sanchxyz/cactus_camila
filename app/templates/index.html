@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cactus Camila</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
+    <link rel="stylesheet" href="/static/css/estilos.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="/static/images/logo_Cc.webp" alt="Cactus Camila">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#"><span class="text">C A C T U S</span><img class="icon-img"
+                            src="/static/images/cactus.webp" alt="Cactus"></a></li>
+                <li><a href="#"><span class="text">S U C U L E N T A S</span><img class="icon-img"
+                            src="/static/images/suculentas.webp" alt="Suculentas"></a></li>
+                <li><a href="#"><span class="text">O T R O S</span><img class="icon-img" src="/static/images/otros.webp"
+                            alt="Otros"></a></li>
+                <li class="icon">
+                    <a href="{{ url_for('login') }}">
+                        <img src="/static/images/persona.webp" alt="Iniciar Sesión">
+                    </a>
+                </li>
+                <li class="icon">
+                    <a href="{{ url_for('home') }}">
+                        <img src="/static/images/home.webp" alt="Inicio">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="info">
+        <h2>¿QUIENES SOMOS ?</h2>
+        <p>
+            En nuestro vivero, cultivamos y ofrecemos una variedad de plantas ornamentales,
+            incluyendo cactus y suculentas. Nos enfocamos tanto en coleccionistas apasionados
+            como en organizadores de eventos o quienes buscan embellecer su hogar con un toque
+            natural y elegante.
+        </p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Cactus Camila. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+
+</html>
