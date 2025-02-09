@@ -1,4 +1,8 @@
-/* Estilos generales */
+/* ================================================== */
+/* ESTILOS GENERALES (DESKTOP FIRST) */
+/* ================================================== */
+
+
 * {
     box-sizing: border-box;
 }
@@ -32,8 +36,13 @@ header {
     top: 0;
     left: 0;
     z-index: 1000;
-    /* Asegura que el header esté por encima */
 }
+
+
+
+/* ================================================== */
+/*                       LOGO  */
+/* ================================================== */
 
 /* Logo */
 .logo {
@@ -45,7 +54,13 @@ header {
     max-width: 100%;
 }
 
-/* Menú de navegación */
+
+
+
+/* ================================================== */
+/*                  MENU DE NAVEGACION*/
+/* ================================================== */
+
 nav {
     flex-grow: 1;
     display: flex;
@@ -81,7 +96,25 @@ nav ul li a:hover {
     color: #4CAF50;
 }
 
-/* Iconos (Home y Login) */
+
+
+/* Estilos generales (fuera de media queries) */
+nav ul li a .icon-img {
+    display: none;
+    /* Asegura que los iconos estén ocultos en desktop */
+}
+
+nav ul li a .text {
+    display: inline-block;
+    /* Muestra el texto en desktop */
+}
+
+
+
+/* ================================================== */
+/*            ICONOS LOGIN / HOME */
+/* ================================================== */
+
 nav ul li.icon a img {
     width: 24px;
     height: 24px;
@@ -97,6 +130,12 @@ nav ul li:last-child {
     margin-right: 140px;
 }
 
+
+/* ================================================== */
+/*            INFORMACION INDEX */
+/* ================================================== */
+
+
 /* Sección de información */
 .info {
     position: relative;
@@ -104,21 +143,28 @@ nav ul li:last-child {
     /* Ajusta este valor según la altura del header */
     left: 5%;
     width: 90%;
-    max-width: 1000px;
+    max-width: 700px;
     text-align: left;
     padding: 1rem;
     font-style: italic;
 }
 
 .info h2 {
-    font-size: 2.5rem;
+    font-size: 1.7rem;
     margin-bottom: 1rem;
 }
 
 .info p {
-    font-size: 1.7rem;
+    font-size: 1.2rem;
     line-height: 1.5;
 }
+
+
+
+
+/* ================================================== */
+/*                      FOOTER */
+/* ================================================== */
 
 /* Footer */
 footer {
@@ -129,88 +175,20 @@ footer {
     bottom: 0;
     width: 100%;
     z-index: 1000;
-    /* Asegura que el footer esté por encima */
 }
 
-/* Responsividad */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-        padding: 1rem;
-    }
 
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-        padding-top: 1rem;
-    }
 
-    nav ul li {
-        margin-right: 0;
-    }
+/* ================================================== */
+/*              ESTILOS PARA EL LOGIN */
+/* ================================================== */
 
-    .info {
-        margin-top: 150px;
-        /* Ajusta este valor para dispositivos móviles */
-        left: 10px;
-        width: calc(100% - 20px);
-    }
-}
-
-@media (max-width: 480px) {
-    .logo img {
-        width: 100px;
-    }
-
-    nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-    }
-
-    nav ul li {
-        flex: 1;
-        text-align: center;
-    }
-
-    nav ul li.icon {
-        flex: none;
-    }
-
-    nav ul li a {
-        font-size: 1rem;
-    }
-}
-
-/* Mostrar solo texto en pantallas grandes */
-nav ul li a .icon-img {
-    display: none;
-}
-
-/* En pantallas pequeñas, mostrar iconos y ocultar texto */
-@media (max-width: 768px) {
-    nav ul li a .text {
-        display: none;
-    }
-
-    nav ul li a .icon-img {
-        display: inline-block;
-        width: 24px;
-        height: auto;
-        vertical-align: middle;
-    }
-}
-
-/* Estilos específicos para la página de login */
 .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: url('/static/images/blur_1.svg') no-repeat center center fixed;
+    background: url('/static/images/blur_6.svg') no-repeat center center fixed;
     background-size: cover;
     padding: 20px;
     padding-top: 80px;
@@ -294,21 +272,87 @@ button:hover {
     text-decoration: underline;
 }
 
-/* Responsividad */
-@media (max-width: 480px) {
-    .login-card {
-        padding: 1.5rem;
+
+/* ================================================== */
+/*              MEDIA qUERYS PARA RESPONSIVE */
+/* ================================================== */
+
+
+/* Media Query para 850px */
+@media (max-width: 850px) {
+
+    /* Reglas del primer bloque */
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
     }
 
-    .login-card h2 {
-        font-size: 1.5rem;
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        padding-top: 1rem;
     }
 
-    .input-group input {
-        padding: 0.5rem;
+
+
+    /* Reglas del segundo bloque */
+    header {
+        padding: 1rem 0;
+        /* Sobrescribe el padding anterior */
     }
 
-    button {
-        padding: 0.5rem;
+
+
+    nav {
+        width: 100%;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    nav ul {
+        justify-content: center;
+        gap: 2.4rem;
+        flex-wrap: nowrap;
+        padding: 0 10px;
+    }
+
+    nav ul li a .text {
+        display: none;
+    }
+
+    nav ul li a .icon-img {
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+    }
+
+    nav ul li.icon a img {
+        width: 22px;
+        height: 22px;
+    }
+
+    nav ul li:last-child {
+        margin-right: 0;
+    }
+
+
+
+    .info {
+
+        position: bottom;
+        margin-top: 350px;
+        left: 10px;
+        width: calc(100% - 20px);
+    }
+
+
+    .info h2 {
+        font-size: 1.2rem;
+    }
+
+    .info p {
+        font-size: 0.9rem;
     }
 }
